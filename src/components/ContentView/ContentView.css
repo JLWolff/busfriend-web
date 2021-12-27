@@ -1,0 +1,14 @@
+
+.contentBox{
+    border-radius: 10px;
+    padding: 16px 8px;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+
+.contentTitle{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding-bottom: 4px;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 1px 0px 0px;
+}
