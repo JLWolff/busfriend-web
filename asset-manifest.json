@@ -1,17 +1,17 @@
 {
   "files": {
-    "main.css": "/busfriend-web/static/css/main.0ffd45ab.css",
-    "main.js": "/busfriend-web/static/js/main.7c702112.js",
+    "main.css": "/busfriend-web/static/css/main.725e843a.css",
+    "main.js": "/busfriend-web/static/js/main.068879c5.js",
     "static/js/787.77ea3c68.chunk.js": "/busfriend-web/static/js/787.77ea3c68.chunk.js",
     "static/media/logo.png": "/busfriend-web/static/media/logo.e9431288fcbe863fb09c.png",
     "static/media/home-background2.svg": "/busfriend-web/static/media/home-background2.02abb3b275768db67448.svg",
     "index.html": "/busfriend-web/index.html",
-    "main.0ffd45ab.css.map": "/busfriend-web/static/css/main.0ffd45ab.css.map",
-    "main.7c702112.js.map": "/busfriend-web/static/js/main.7c702112.js.map",
+    "main.725e843a.css.map": "/busfriend-web/static/css/main.725e843a.css.map",
+    "main.068879c5.js.map": "/busfriend-web/static/js/main.068879c5.js.map",
     "787.77ea3c68.chunk.js.map": "/busfriend-web/static/js/787.77ea3c68.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.0ffd45ab.css",
-    "static/js/main.7c702112.js"
+    "static/css/main.725e843a.css",
+    "static/js/main.068879c5.js"
   ]
 }
