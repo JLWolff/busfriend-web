@@ -8,7 +8,7 @@ const Routes =  () => {
     return(
         <BrowserRouter>
             <Route  component={Home} path='/busfriend-web' exact />
-            <Route  component={Stops} path='/stops' />
+            <Route  component={Stops} path='/busfriend-web/stops' />
           </BrowserRouter>
     );
 }

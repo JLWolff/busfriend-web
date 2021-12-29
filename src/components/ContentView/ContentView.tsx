@@ -1,10 +1,13 @@
 import ContentStop from '../ContentStop/ContentStop';
 
+import { FiRefreshCcw } from 'react-icons/fi';
+
 import './ContentView.css';
 
 interface Props{
     title: string,
-    data: Time[]
+    data: Time[],
+    handleRefresh: Function
 }
 
 interface Time{
@@ -15,11 +18,15 @@ interface Time{
 }
 
 
-const ContentView = ({title, data}: Props) =>{
+const ContentView = ({title, data, handleRefresh}: Props) =>{
     console.log(data)
     return(
         <div>
+            <div className='title-times'>
             <h2>{title}</h2>
+            <span onClick={() => handleRefresh()} ><FiRefreshCcw /></span>
+            </div>
+            
             <div className="contentBox">
                 <div className='contentTitle'>
                     <span>Linha</span>
@@ -29,7 +36,7 @@ const ContentView = ({title, data}: Props) =>{
                 </div>
                 
                 {/* <div> */}
-                    {data.map(time => (<ContentStop time={time}/>))}
+                    {data.map(time => (<ContentStop key={time.estHour}time={time}/>))}
                 {/* </div> */}
             </div>
         </div>

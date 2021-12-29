@@ -1,6 +1,5 @@
-import React from 'react';
 import './styles.css';
-import { FiLogIn, FiSearch } from 'react-icons/fi'
+import { FiSearch } from 'react-icons/fi'
 import { Link } from 'react-router-dom';
 
 import logo from '../../assets/logo.png';
@@ -19,7 +18,7 @@ const Home = () => {
                 <main>
                     <h1>Sua melhor forma de chegar na paragem sempre na hora.</h1>
                     <p>Organizamos o tempo dos autocarros nas paragens em tempo real para que tornar o transporte no porto mais eficiente.</p>
-                    <Link to="/stops">
+                    <Link to="/busfriend-web/stops">
                         <span>
                             <FiSearch />
                         </span>

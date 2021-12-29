@@ -1,4 +1,4 @@
-import React, { useEffect, useState, ChangeEvent} from 'react';
+import  { useEffect, useState, ChangeEvent} from 'react';
 import { Link } from 'react-router-dom';
 import { FiArrowLeft } from 'react-icons/fi';
 import api from '../../services/api';
@@ -129,22 +129,42 @@ const Stops = () =>{
     }, [selectedDir]);
 
     useEffect(() => {
-        api.get<Time[]>(`stoptimes?stop=${selectedStop}`)
-        .then(response => {
-            if(stops === undefined){
-                setTimes([])
-            }
-            console.log(response.data)
-            setTimes(response.data);
-        });
+        handleTimesReq().then(() => {
+            console.log("made req");
+        })
     }, [selectedStop]);
 
+    useEffect(() => {
+        const interval = setInterval(() => {
+            if(selectedStop !== undefined){
+                handleTimesReq().then(() => {
+                    console.log("made req");
+                })
+            }
+        }, 25000);
+        return () => clearInterval(interval);
+      }, [selectedStop]);
+
+    async function handleTimesReq(){
+        console.log("click")
+        api.get<Time[]>(`stoptimes?stop=${selectedStop}`)
+            .then(response => {
+                console.log(response.data)
+                setTimes(response.data);
+            });
+    }
     function handleSelectLine(event: ChangeEvent<HTMLSelectElement>){
         const line = event.target.value;
+        setStops([]);
+        setSelectedStop(undefined);
+        setDirections([])
+        setSelectedDir(undefined);
         setSelectedLine(line); 
     }
     function handleSelectCity(event: ChangeEvent<HTMLSelectElement>){
         const city = event.target.value;
+        setStops([]);
+        setSelectedStop(undefined);
         setSelectedDir(city);
     }
 
@@ -158,14 +178,14 @@ const Stops = () =>{
             <header>
                 <img src={logo} alt="logoSVG" />
 
-                <Link to="/busfriend">
+                <Link to="/busfriend-web">
                     <FiArrowLeft />
                     Voltar para home
                 </Link>
             </header>
 
             <form>
-             <h1>{selectedDir ===undefined || selectedLine === undefined ?  "Selecione a linha, a direção e a paragem desejada"  : `Pontos de coleta em: ${selectedLine},${selectedDir}`}</h1>
+             <h1>Selecione a linha, a direção e a paragem desejada</h1>
                 <fieldset>
                     <div className="field-group">
                         <div className="field">
@@ -220,7 +240,7 @@ const Stops = () =>{
                 {
                     times.length > 0 &&
                         <>
-                        <ContentView  title={"Tempos da paragem"} data={times}/>
+                        <ContentView  title={"Tempos da paragem"} data={times} handleRefresh={handleTimesReq}/>
                         </>
                     }
             </form>

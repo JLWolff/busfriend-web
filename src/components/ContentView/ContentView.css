@@ -12,3 +12,13 @@
     padding-bottom: 4px;
     box-shadow: rgba(0, 0, 0, 0.24) 0px 1px 0px 0px;
 }
+
+.title-times{
+    display: flex;
+    justify-content: space-between;
+}
+
+.title-times span{
+    margin-top: 28px;
+    cursor: pointer;
+}
