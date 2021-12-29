@@ -2,9 +2,33 @@
     height: 75vh;
   
     background: url('../../assets/home-background2.svg') no-repeat 830px bottom;
-    background-size: 50vh;
+    background-size: 44vh;
   }
-  
+
+  .footer-class{
+    display: flex;
+    justify-content: center;
+  }
+
+footer{
+  align-self: center;
+  position: relative;
+  bottom: 32px;
+  display: flex;
+  justify-content: center;
+  text-align: center;
+}
+footer span{
+  box-shadow: rgba(0, 0, 0, 0.4) 0px 3px 8px;
+  padding: 0 4px;
+  margin: 0 4px;
+  cursor: pointer;
+
+}
+
+a{
+  text-decoration: none;
+}
   #page-home .content {
     width: 100%;
     height: 100%;

@@ -1,5 +1,5 @@
 import './styles.css';
-import { FiSearch } from 'react-icons/fi'
+import { FiSearch, FiLinkedin, FiGithub } from 'react-icons/fi'
 import { Link } from 'react-router-dom';
 
 import logo from '../../assets/logo.png';
@@ -27,6 +27,17 @@ const Home = () => {
                         </strong>
                     </Link>
                 </main>
+            </div>
+            <div className='footer-class'>
+            <footer>
+                Developed by Joao Wolff
+                <a href="https://www.linkedin.com/in/joao-lucas-wolff-3465131aa/" target="_blank">
+                    <span><FiLinkedin/></span>
+                </a>
+                <a href="https://github.com/JLWolff" target="_blank">
+                <span><FiGithub/></span>
+                </a>
+            </footer>
             </div>
         </div>
     );

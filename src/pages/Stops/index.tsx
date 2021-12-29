@@ -1,6 +1,6 @@
 import  { useEffect, useState, ChangeEvent} from 'react';
 import { Link } from 'react-router-dom';
-import { FiArrowLeft } from 'react-icons/fi';
+import { FiArrowLeft, FiLinkedin, FiGithub } from 'react-icons/fi';
 import api from '../../services/api';
 
 import ContentView from '../../components/ContentView/ContentView';
@@ -244,6 +244,17 @@ const Stops = () =>{
                         </>
                     }
             </form>
+            <div className='footer-class'>
+            <footer>
+                Developed by Joao Wolff
+                <a href="https://www.linkedin.com/in/joao-lucas-wolff-3465131aa/" target="_blank">
+                    <span><FiLinkedin/></span>
+                </a>
+                <a href="https://github.com/JLWolff" target="_blank">
+                <span><FiGithub/></span>
+                </a>
+            </footer>
+            </div>
         </div>
     );
 }
