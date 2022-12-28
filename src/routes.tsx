@@ -7,8 +7,8 @@ import Stops from './pages/Stops'
 const Routes =  () => {
     return(
         <BrowserRouter>
-            <Route  component={Home} path='/busfriend-web' exact />
-            <Route  component={Stops} path='/busfriend-web/stops' />
+            <Route  component={Home} path='/' exact />
+            <Route  component={Stops} path='/stops' />
           </BrowserRouter>
     );
 }
