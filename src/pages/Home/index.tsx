@@ -18,7 +18,7 @@ const Home = () => {
                 <main>
                     <h1>Sua melhor forma de chegar na paragem sempre na hora.</h1>
                     <p>Organizamos o tempo dos autocarros nas paragens em tempo real para que tornar o transporte no porto mais eficiente.</p>
-                    <Link to="/busfriend-web/stops">
+                    <Link to="/stops">
                         <span>
                             <FiSearch />
                         </span>

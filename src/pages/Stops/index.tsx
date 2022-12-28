@@ -1,4 +1,4 @@
-import  { useEffect, useState, ChangeEvent} from 'react';
+import  { useEffect, useState, ChangeEvent, SetStateAction} from 'react';
 import { Link } from 'react-router-dom';
 import { FiArrowLeft, FiLinkedin, FiGithub } from 'react-icons/fi';
 import api from '../../services/api';
@@ -91,8 +91,8 @@ const Stops = () =>{
 
     useEffect(() => {
         api.get<LinesResponse>("lines")
-        .then(response => {
-            const linesInitial = response.data.records.map(line => ({  
+        .then((response: { data: { records: any[]; }; }) => {
+            const linesInitial = response.data.records.map((line: { description: any; code: any; }) => ({  
                 "name": line.description,
                 "code": line.code
             }));
@@ -107,8 +107,8 @@ const Stops = () =>{
         }
             api
             .get<DirectionsResponse>(`lines/dir?line=${selectedLine}`)
-            .then(response => {
-                const dirs = response.data.records.map(result => ({
+            .then((response: { data: { records: any[]; }; }) => {
+                const dirs = response.data.records.map((result: { descr: any; dir: any; }) => ({
                     "descr": result.descr,
                     "dir": result.dir 
                 }));
@@ -119,8 +119,8 @@ const Stops = () =>{
     
     useEffect(() => {
         api.get<StopsResponse>(`stops?line=${selectedLine}&dir=${selectedDir}`)
-        .then(response => {
-            const stops = response.data.records.map(stop => ({  
+        .then((response: { data: { records: any[]; }; }) => {
+            const stops = response.data.records.map((stop: { name: any; code: any; }) => ({  
                 "name": stop.name,
                 "code": stop.code
             }));
@@ -148,7 +148,7 @@ const Stops = () =>{
     async function handleTimesReq(){
         console.log("click")
         api.get<Time[]>(`stoptimes?stop=${selectedStop}`)
-            .then(response => {
+            .then((response: { data: SetStateAction<Time[]>; }) => {
                 console.log(response.data)
                 setTimes(response.data);
             });
@@ -178,7 +178,7 @@ const Stops = () =>{
             <header>
                 <img src={logo} alt="logoSVG" />
 
-                <Link to="/busfriend-web">
+                <Link to="/">
                     <FiArrowLeft />
                     Voltar para home
                 </Link>
